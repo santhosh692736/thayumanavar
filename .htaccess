@@ -1,0 +1,14 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Example rewrite rule
+RewriteRule ^old-page\.html$ new-page.html [R=301,L]
+
+# Directory and file access control
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh|sql)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Prevent directory listing
+Options -Indexes
